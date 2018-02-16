@@ -24,10 +24,18 @@ module.exports = {
   /*
   ** Build configuration
   */
+  css: [
+    { src: 'bulma' , lang: 'sass'}
+  ],
   build: {
     /*
     ** Run ESLint on save
     */
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': false
+      }
+    },
     extractCSS: true,
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
